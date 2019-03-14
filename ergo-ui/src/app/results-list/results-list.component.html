@@ -1,0 +1,34 @@
+<div class="container">
+  <mat-card class="mat-card-custom">
+    <mat-form-field class="search">
+        <input matInput placeholder="Search" (keydown)="onKeyDown($event)" class="search-input">
+    </mat-form-field>
+  </mat-card>
+
+  <mat-card class="mat-card-custom" >
+    <p *ngIf="!results.length" class="light-gray">
+      Nothing to show. Pleace type in keywords to search for results
+    </p>
+    <mat-accordion *ngIf="results.length" [multi]="true">
+        <mat-expansion-panel *ngFor="let element of results; let i = index" (opened)="onSelectedQuestion(element.accepted_answer_id, element.question_id, i)">
+            <mat-expansion-panel-header>
+              <mat-panel-title>{{element.title}}</mat-panel-title>
+            </mat-expansion-panel-header>
+
+            <div [innerHtml]="element.body" class="question"></div>
+            
+            <div *ngFor="let answer of answers[i]">
+               <p class="checkmark" *ngIf="answer.is_accepted"><img src="http://pluspng.com/img-png/png-tick-png-file-tick-mark-icon-png-6619-png-480.png" height="20">Accepted answer:</p>
+               <div [ngClass]="{'answer': true, 'accepted': answer.is_accepted}" [innerHtml]="answer.body"></div>
+            </div>
+            <p *ngIf="answers[i] && !answers[i].length">No answers yet.</p>
+
+          </mat-expansion-panel>
+      </mat-accordion>
+  </mat-card>
+</div>
+
+
+<div class="loading-indicator" *ngIf="loading">
+    <mat-progress-spinner mode="indeterminate"></mat-progress-spinner>
+</div>

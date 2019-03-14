@@ -1,0 +1,91 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+body {
+    background: rgba(0,0,0,.01);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 1200px;
+    margin: auto;
+    max-width:100%;
+}
+
+.mat-card-custom {
+    margin: 40px 0;
+    padding: 15px;
+}
+
+.mat-expansion-panel-header {
+    font-size: 17px;
+}
+
+.search {
+    width: 100%;
+}
+
+.header {
+    background: #3f51b5;
+    width: 100%;
+    height: 50px;
+}
+
+.header .container {
+    height: 100%;
+    display: flex;
+    align-items: center
+}
+
+.answer {
+    margin: 10px 0 30px;
+    padding: 10px 10px;
+    background: rgba(219, 255, 233, 0.25);
+}
+.question {
+    background: rgba(255, 248, 219, 0.25);
+    padding: 10px 10px;
+    margin: 0 0 30px;
+    border-bottom: 1px solid #e4e6e8;
+
+}
+.answer.accepted {
+    padding: 0 10px 20px;
+}
+.answer pre {
+    background: #eff0f1;
+    padding: 5px;
+    font-size: 13px;
+}
+.checkmark {
+    font-weight: 700;
+}
+.loading-indicator {
+    position: fixed;
+    z-index: 999;
+    height: 2em;
+    width: 2em;
+    overflow: show;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  }
+  
+  .loading-indicator:before {
+    content: '';
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.3);
+  }
+
+  .light-gray {
+      font-style: italic;
+      color: rgba(0,0,0,0.3);
+  }
